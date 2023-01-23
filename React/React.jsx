@@ -63,4 +63,83 @@ const ShoppingCart = (props) => {
   )
 };
 // Change code below this line
-ShoppingCart.defaultProps={ items: 0 }
+// ShoppingCart.defaultProps={ items: 0 }
+// 4.questionsOverride Default Props
+const Items = (props) => {
+  return <h1>Current Quantity of Items in Cart: {props.quantity}</h1>
+}
+
+Items.defaultProps = {
+  quantity: 0
+}
+
+class ShoppingCartf extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+  render() {
+    { /* Change code below this line */ }
+    return <Items quantity={10}   />
+    { /* Change code above this line */ }
+  }
+};
+// 5questions Use PropTypes to Define the Props You Expect
+
+
+
+const Items = (props) => {
+  return <h1>Current Quantity of Items in Cart: {props.quantity.number}</h1>
+};
+
+// Change code below this line
+Items.propTypes = {  quantity: PropTypes.number.isRequired  }
+// Change code above this line
+
+Items.defaultProps = {
+  quantity: 5
+};
+
+class ShoppingCarts extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+  render() {
+    return <Items  />
+  }
+};
+// 6.questions Access Props Using this.props
+class App extends React.Component {
+  constructor(props) {
+    super(props);
+
+  }
+  render() {
+    return (
+        <div>
+            { /* Change code below this line */ }
+            <Welcome name="Tarık" />
+            {
+              /* Change code above this line */ }
+        </div>
+    );
+  }
+};
+
+class Welcome extends React.Component {
+  constructor(props) {
+    super(props);
+
+  }
+  render() {
+    return (
+        <div>
+           
+          { /* Change code below this line */ }
+          <p>Hello, <strong>
+           {this.props.name}
+          </strong>!</p>
+          { /* Change code above this line */ }
+        </div>
+    );
+  }
+};
