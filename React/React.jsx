@@ -143,3 +143,28 @@ class Welcome extends React.Component {
     );
   }
 };
+// 7.questions Review Using Props with Stateless Functional Components
+const Camper = (props) => <p>{props.name}</p>;
+
+Camper.defaultProps = { name: "CamperBot" };
+Camper.propTypes = { name: PropTypes.string.isRequired };
+
+// 8.Create a Stateful Component
+class StatefulComponent extends React.Component {
+  constructor(props) {
+    super(props);
+    // Only change code below this line
+    this.state = {
+      firstName:"meltemfeyza"
+      }
+
+    // Only change code above this line
+  }
+  render() {
+    return (
+      <div>
+        <h1>{this.state.firstName}</h1>
+      </div>
+    );
+  }
+};
